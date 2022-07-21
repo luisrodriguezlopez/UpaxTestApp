@@ -23,8 +23,8 @@ class SearchPresenter : SearchPresenterProtocol{
         
     }
     
-    func didLoad() {
-        self.interactor?.getSearch()
+    func didSerch(term : String) {
+        self.interactor?.getSearchBy(term: term)
     }
     
 }

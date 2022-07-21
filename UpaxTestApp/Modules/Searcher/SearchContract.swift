@@ -10,14 +10,13 @@ import Foundation
 
 protocol SearchInteractorProtocol: AnyObject {
     var output: SearchInteractorOutput? { get set }
-    func getSearch()
+    func getSearchBy(term: String)
 //    init(service: SearchServiceProtocol)
 }
 
 protocol SearchInteractorOutput: AnyObject {
     func receive(_ search: [Result]?)
     func receiveError(_ error: Error)
-
 }
 
 protocol SearchPresenterProtocol {
@@ -25,12 +24,13 @@ protocol SearchPresenterProtocol {
     var router : SearchRouterProtocol? { get set }
     var interactor : SearchInteractorProtocol? { get set }
     
-    func didLoad()
+    func didSerch(term : String)
     
      init(view : SearchViewProtocol, router: SearchRouterProtocol, interactor:SearchInteractorProtocol)
 }
 
 protocol SearchViewProtocol: AnyObject {
+    func searchBy(term: String)
     func loading()
     func dismissLoading()
 }

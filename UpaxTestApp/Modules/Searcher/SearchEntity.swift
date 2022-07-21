@@ -85,10 +85,10 @@ struct Urls: Codable {
 
 // MARK: - User
 struct User: Codable {
-    let id, username, name, firstName: String?
-    let lastName: String?
-    let profileImage: ProfileImage?
-    let links: UserLinks?
+    var id, username, name, firstName: String?
+    var lastName: String?
+    var profileImage: ProfileImage?
+    var links: UserLinks?
 
     enum CodingKeys: String, CodingKey {
         case id, username, name
@@ -100,13 +100,23 @@ struct User: Codable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = values.contains(.id) ?  try values.decode(String.self, forKey: .id) : ""
-        username = values.contains(.username) ?  try values.decode(String.self, forKey: .username) : ""
-        name = values.contains(.name) ?  try values.decode(String.self, forKey: .name) : ""
-        firstName = values.contains(.firstName) ?  try values.decode(String.self, forKey: .firstName) : ""
-        lastName = values.contains(.lastName) ?  try values.decode(String.self, forKey: .lastName) : ""
-        profileImage = values.contains(.profileImage) ?  try values.decode(ProfileImage.self, forKey: .profileImage) : nil
-        links = values.contains(.links) ?  try values.decode(UserLinks.self, forKey: .links) : nil
+        do {
+            id = values.contains(.id) ?  try values.decode(String.self, forKey: .id) : ""
+            username = values.contains(.username) ?  try values.decode(String.self, forKey: .username) : ""
+            name = values.contains(.name) ?  try values.decode(String.self, forKey: .name) : ""
+            firstName = values.contains(.firstName) ?  try values.decode(String.self, forKey: .firstName) : ""
+            lastName = values.contains(.lastName) ?  try values.decode(String.self, forKey: .lastName) : ""
+            profileImage = values.contains(.profileImage) ?  try values.decode(ProfileImage.self, forKey: .profileImage) : nil
+            links = values.contains(.links) ?  try values.decode(UserLinks.self, forKey: .links) : nil
+        } catch  {
+            id = values.contains(.id) ?  try values.decode(String.self, forKey: .id) : ""
+            username = values.contains(.username) ?  try values.decode(String.self, forKey: .username) : ""
+            name = values.contains(.name) ?  try values.decode(String.self, forKey: .name) : ""
+            firstName = "first_name"
+            lastName =  "last_nsmr"
+            profileImage = values.contains(.profileImage) ?  try values.decode(ProfileImage.self, forKey: .profileImage) : nil
+            links = values.contains(.links) ?  try values.decode(UserLinks.self, forKey: .links) : nil
+        }
     }
 }
 
@@ -120,10 +130,25 @@ struct UserLinks: Codable {
         case linksSelf = "self"
         case html, photos, likes
     }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        linksSelf = values.contains(.linksSelf) ?  try values.decode(String.self, forKey: .linksSelf) : ""
+        html = values.contains(.linksSelf) ?  try values.decode(String.self, forKey: .html) : ""
+        photos = values.contains(.photos) ?  try values.decode(String.self, forKey: .photos) : ""
+        likes = values.contains(.likes) ?  try values.decode(String.self, forKey: .likes) : ""
+    }
 }
 
 // MARK: - ProfileImage
 struct ProfileImage: Codable {
     let small, medium, large: String?
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        small = values.contains(.small) ?  try values.decode(String.self, forKey: .small) : ""
+        medium = values.contains(.medium) ?  try values.decode(String.self, forKey: .medium) : ""
+        large = values.contains(.large) ?  try values.decode(String.self, forKey: .large) : ""
+    }
 }
 

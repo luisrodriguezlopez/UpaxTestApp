@@ -10,17 +10,14 @@ import Alamofire
 
 class SearchInteractor : SearchInteractorProtocol {
     
-    
     var output: SearchInteractorOutput?
     
     
     init() {
         
     }
-    
-    
-    
-    func getSearch() {
+
+    func getSearchBy(term: String) {
         let headers: HTTPHeaders = [
             "Authorization": "Client-ID 8DkNaM9M2D6fdc4hIFXr8TdFHyajXlZn4hUT4tkLuVE",
             "Accept": "application/json"
@@ -28,9 +25,22 @@ class SearchInteractor : SearchInteractorProtocol {
         // HWui2Gmo2AbHzVp_kzeAQBVGfxFso8MpstGDng-TjbU
 
 
-        AF.request("https://api.unsplash.com/search/photos?page=1&query=amor", headers: headers).responseDecodable(of: SearchResponse.self) { response in
-            debugPrint(response.value ?? nil )
-            self.output?.receive(response.value?.results ?? nil )
+        AF.request("https://api.unsplash.com/search/photos?page=1&query=\(term)", headers: headers).responseJSON { response in
+            switch response.result {
+                    case .success:
+                if(response.value != nil ) {
+                    let jsonData = response.data
+                    print("jsonData: \(jsonData)")
+                    do{
+                        let searchResponse  = try JSONDecoder().decode(SearchResponse.self, from: jsonData!)
+                        self.output?.receive(searchResponse.results)
+                    }catch {
+                        print("Error: \(error)")
+                    }
+                }
+                case .failure(let error):
+                    print(error)
+                }
         }
     }
     
