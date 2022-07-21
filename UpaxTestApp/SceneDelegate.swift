@@ -20,9 +20,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
             window = UIWindow(frame: windowScene.coordinateSpace.bounds)
             window?.windowScene = windowScene
-            let vc = UIViewController()
-            window?.rootViewController = vc
+        let viewController : SearchViewController? = SearchViewController()
+        let router = SearchRouter()
+        let interactor = SearchInteractor()
+
+        if let view = viewController {
+            let nav =  UINavigationController()
+            let presenter = SearchPresenter(view: view, router: router , interactor: interactor)
+            
+            view.presenter = presenter
+
+            presenter.view = view
+            router.nav = nav
+            presenter.router = router
+            presenter.interactor = interactor
+            nav.addChild(view)
+//
+//            interactor.output = presenter
+            window?.rootViewController = nav
             window?.makeKeyAndVisible()
+        }
+        
+        
+        
+        
+            
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
