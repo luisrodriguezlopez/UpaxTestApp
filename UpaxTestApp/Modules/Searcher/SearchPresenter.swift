@@ -30,13 +30,13 @@ class SearchPresenter : SearchPresenterProtocol{
 }
 
 extension SearchPresenter : SearchInteractorOutput {
-    func receive(_ search: [Result]?) {
+    func receive(term: String ,_ search: [Result]?) {
         guard search != nil else  { return }
-        self.router?.showSearchListwith(result: search!)
+        self.router?.showSearchListwith(term: term, result: search)
     }
     
     func receiveError(_ error: Error) {
-        
+        self.view?.showTryAgaint()
     }
     
 }

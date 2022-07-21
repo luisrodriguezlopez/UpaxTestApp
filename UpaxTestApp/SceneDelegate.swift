@@ -35,8 +35,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             presenter.router = router
             presenter.interactor = interactor
             nav.addChild(view)
-//
-//            interactor.output = presenter
             window?.rootViewController = nav
             window?.makeKeyAndVisible()
         }

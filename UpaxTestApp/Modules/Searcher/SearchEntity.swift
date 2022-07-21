@@ -34,33 +34,29 @@ struct Result: Codable {
 //    var color, blurHash: String?
 //    var likes: Int?
 //    var likedByUser: Bool?
-//    var resultDescription: String?
-    var user: User?
+    var description: String? = nil
+    var user: User? = nil
 //    var currentUserCollections: [JSONAny?]?
 //    var urls: Urls?
 //    var links: ResultLinks?
 
     enum CodingKeys: String, CodingKey {
-      
         case user
+        case description
 
     }
     
     init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-//        id = values.contains(.id) ?  try values.decode(String.self, forKey: .id) : ""
-//        createdAt = values.contains(.createdAt) ?  try values.decode(String.self, forKey: .createdAt) : ""
-//        width = values.contains(.width) ?  try values.decode(Int.self, forKey: .width) : 0
-//        height = values.contains(.height) ?  try values.decode(Int.self, forKey: .height) : 0
-//        color = values.contains(.color) ?  try values.decode(String.self, forKey: .color) : ""
-//         blurHash = values.contains(.blurHash) ?  try values.decode(String.self, forKey: .blurHash) : ""
-//        likes = values.contains(.likes) ?  try values.decode(Int.self, forKey: .likes) : 0
-//        likedByUser = values.contains(.likedByUser) ?  try values.decode(Bool.self, forKey: .likedByUser) : false
-//        resultDescription = values.contains(.resultDescription) ?  try values.decode(String.self, forKey: .resultDescription) : ""
-        user  = values.contains(.user) ?  try values.decode(User.self, forKey: .user) : nil
-//        currentUserCollections = values.contains(.currentUserCollections) ?  try values.decode([JSONAny].self, forKey: .currentUserCollections) : []
-//        urls = values.contains(.urls) ?  try values.decode(Urls.self, forKey: .urls) : nil
-//        links = values.contains(.links) ?  try values.decode(ResultLinks.self, forKey: .links) : nil
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            do {
+                user  = values.contains(.user) ?  try values.decode(User.self, forKey: .user) : nil
+                description = values.contains(.description) ?  try values.decode(String.self, forKey: .description) : nil
+            } catch {
+                user  = values.contains(.user) ?  try values.decode(User.self, forKey: .user) : nil
+                description = """
+                Lorem ipsum dolor sit amet consectetur adipiscing elit enim et, aliquam netus integer fringilla augue fermentum nam penatibus, magnis sapien morbi feugiat ac habitasse condimentum ad. Parturient et metus massa taciti dictum, velit morbi quis purus torquent, montes ridiculus tellus sociis. Euismod vulputate fringilla curabitur quis dignissim phasellus ligula mattis rutrum platea vitae luctus scelerisque posuere, sem montes quisque primis iaculis fusce cubilia integer taciti at ullamcorper orci eros.
+                """
+            }
         
     }
 
@@ -85,8 +81,11 @@ struct Urls: Codable {
 
 // MARK: - User
 struct User: Codable {
-    var id, username, name, firstName: String?
-    var lastName: String?
+    var id:  String? = nil
+    var username:  String? = nil
+    var name:  String? = nil
+    var firstName:  String? = nil
+    var lastName: String? = nil
     var profileImage: ProfileImage?
     var links: UserLinks?
 

@@ -15,7 +15,7 @@ protocol SearchInteractorProtocol: AnyObject {
 }
 
 protocol SearchInteractorOutput: AnyObject {
-    func receive(_ search: [Result]?)
+    func receive(term: String ,_ search: [Result]?)
     func receiveError(_ error: Error)
 }
 
@@ -30,11 +30,12 @@ protocol SearchPresenterProtocol {
 }
 
 protocol SearchViewProtocol: AnyObject {
+    func showTryAgaint() 
     func searchBy(term: String)
     func loading()
     func dismissLoading()
 }
 
 protocol SearchRouterProtocol: AnyObject {
-    func showSearchListwith(result: [Result]?)
+    func showSearchListwith(term: String ,result: [Result]?) 
 }

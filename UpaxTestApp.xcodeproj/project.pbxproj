@@ -19,6 +19,7 @@
 		2EF7378E2888C79600DCAFC2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2EF7378D2888C79600DCAFC2 /* Kingfisher */; };
 		2EFAA03D2887D22000C13D69 /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFAA03C2887D22000C13D69 /* SearchEntity.swift */; };
 		2EFAA0402887E05800C13D69 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2EFAA03F2887E05800C13D69 /* Alamofire */; };
+		824CFF1C2889B441008208B3 /* SearchListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824CFF1B2889B441008208B3 /* SearchListModel.swift */; };
 		825029DB2886DC9500902A2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825029DA2886DC9500902A2D /* AppDelegate.swift */; };
 		825029DD2886DC9500902A2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825029DC2886DC9500902A2D /* SceneDelegate.swift */; };
 		825029E42886DC9600902A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 825029E32886DC9600902A2D /* Assets.xcassets */; };
@@ -26,6 +27,12 @@
 		825029F22886DC9700902A2D /* UpaxTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825029F12886DC9700902A2D /* UpaxTestAppTests.swift */; };
 		825029FC2886DC9700902A2D /* UpaxTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825029FB2886DC9700902A2D /* UpaxTestAppUITests.swift */; };
 		825029FE2886DC9700902A2D /* UpaxTestAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825029FD2886DC9700902A2D /* UpaxTestAppUITestsLaunchTests.swift */; };
+		82906B06288931C300B45648 /* SearchListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82906B05288931C300B45648 /* SearchListPresenter.swift */; };
+		82906B08288931D700B45648 /* SearchListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82906B07288931D700B45648 /* SearchListInteractor.swift */; };
+		82906B0A288931ED00B45648 /* SearchListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82906B09288931ED00B45648 /* SearchListContract.swift */; };
+		82906B0D288940E000B45648 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 82906B0C288940E000B45648 /* Lottie */; };
+		82906B10288941C300B45648 /* pinging-line.json in Resources */ = {isa = PBXBuildFile; fileRef = 82906B0F288941C300B45648 /* pinging-line.json */; };
+		82906B12288941CA00B45648 /* search-not-found.json in Resources */ = {isa = PBXBuildFile; fileRef = 82906B11288941CA00B45648 /* search-not-found.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +63,7 @@
 		2EF737842888B8F900DCAFC2 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		2EF737872888BBA900DCAFC2 /* imageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCache.swift; sourceTree = "<group>"; };
 		2EFAA03C2887D22000C13D69 /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchEntity.swift; path = UpaxTestApp/Modules/Searcher/SearchEntity.swift; sourceTree = SOURCE_ROOT; };
+		824CFF1B2889B441008208B3 /* SearchListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListModel.swift; sourceTree = "<group>"; };
 		825029D72886DC9500902A2D /* UpaxTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpaxTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		825029DA2886DC9500902A2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		825029DC2886DC9500902A2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +75,11 @@
 		825029F72886DC9700902A2D /* UpaxTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpaxTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		825029FB2886DC9700902A2D /* UpaxTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpaxTestAppUITests.swift; sourceTree = "<group>"; };
 		825029FD2886DC9700902A2D /* UpaxTestAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpaxTestAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		82906B05288931C300B45648 /* SearchListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListPresenter.swift; sourceTree = "<group>"; };
+		82906B07288931D700B45648 /* SearchListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListInteractor.swift; sourceTree = "<group>"; };
+		82906B09288931ED00B45648 /* SearchListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListContract.swift; sourceTree = "<group>"; };
+		82906B0F288941C300B45648 /* pinging-line.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pinging-line.json"; sourceTree = "<group>"; };
+		82906B11288941CA00B45648 /* search-not-found.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "search-not-found.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +89,7 @@
 			files = (
 				2EF7378E2888C79600DCAFC2 /* Kingfisher in Frameworks */,
 				2EFAA0402887E05800C13D69 /* Alamofire in Frameworks */,
+				82906B0D288940E000B45648 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +141,7 @@
 		825029D92886DC9500902A2D /* UpaxTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				82906B0E288941AE00B45648 /* Resources */,
 				2EF737862888BB9300DCAFC2 /* Utils */,
 				82502A0A2887424000902A2D /* Modules */,
 				825029DA2886DC9500902A2D /* AppDelegate.swift */,
@@ -183,8 +198,21 @@
 			children = (
 				2E2E83342887FC2F00FBA908 /* SearchListTableView.swift */,
 				2EF737842888B8F900DCAFC2 /* SearchViewCell.swift */,
+				82906B05288931C300B45648 /* SearchListPresenter.swift */,
+				82906B07288931D700B45648 /* SearchListInteractor.swift */,
+				82906B09288931ED00B45648 /* SearchListContract.swift */,
+				824CFF1B2889B441008208B3 /* SearchListModel.swift */,
 			);
 			path = SearchList;
+			sourceTree = "<group>";
+		};
+		82906B0E288941AE00B45648 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				82906B0F288941C300B45648 /* pinging-line.json */,
+				82906B11288941CA00B45648 /* search-not-found.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +234,7 @@
 			packageProductDependencies = (
 				2EFAA03F2887E05800C13D69 /* Alamofire */,
 				2EF7378D2888C79600DCAFC2 /* Kingfisher */,
+				82906B0C288940E000B45648 /* Lottie */,
 			);
 			productName = UpaxTestApp;
 			productReference = 825029D72886DC9500902A2D /* UpaxTestApp.app */;
@@ -282,6 +311,7 @@
 			packageReferences = (
 				2EFAA03E2887E05800C13D69 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2EF7378C2888C79600DCAFC2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				82906B0B288940E000B45648 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 825029D82886DC9500902A2D /* Products */;
 			projectDirPath = "";
@@ -299,8 +329,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82906B12288941CA00B45648 /* search-not-found.json in Resources */,
 				825029E72886DC9600902A2D /* LaunchScreen.storyboard in Resources */,
 				825029E42886DC9600902A2D /* Assets.xcassets in Resources */,
+				82906B10288941C300B45648 /* pinging-line.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,12 +357,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82906B0A288931ED00B45648 /* SearchListContract.swift in Sources */,
 				2EB122062887C302006CC870 /* SearchInteractor.swift in Sources */,
 				2EB122022887C2C1006CC870 /* SearchView.swift in Sources */,
+				824CFF1C2889B441008208B3 /* SearchListModel.swift in Sources */,
 				2EB122002887C2B1006CC870 /* SearchViewController.swift in Sources */,
 				2EB1220A2887CEEA006CC870 /* SearchContract.swift in Sources */,
 				2EFAA03D2887D22000C13D69 /* SearchEntity.swift in Sources */,
 				2E2E83352887FC2F00FBA908 /* SearchListTableView.swift in Sources */,
+				82906B08288931D700B45648 /* SearchListInteractor.swift in Sources */,
+				82906B06288931C300B45648 /* SearchListPresenter.swift in Sources */,
 				2EF737852888B8F900DCAFC2 /* SearchViewCell.swift in Sources */,
 				2EB122082887C31C006CC870 /* SearchRouter.swift in Sources */,
 				2EB122042887C2D3006CC870 /* SearchPresenter.swift in Sources */,
@@ -708,6 +744,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		82906B0B288940E000B45648 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -720,6 +764,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2EFAA03E2887E05800C13D69 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		82906B0C288940E000B45648 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82906B0B288940E000B45648 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

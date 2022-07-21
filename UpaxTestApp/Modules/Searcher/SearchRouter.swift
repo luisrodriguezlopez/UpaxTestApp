@@ -11,11 +11,21 @@ import UIKit
 
 class SearchRouter : SearchRouterProtocol {
     public var nav : UINavigationController?
-    func showSearchListwith(result: [Result]?) {
+    func showSearchListwith(term: String ,result: [Result]?) {
         let searchListVC = SearchListTableView()
         searchListVC.view.backgroundColor = .groupTableViewBackground
-        searchListVC.results = result
-        nav?.pushViewController(searchListVC, animated: true)
+       
+        
+        let interactor = SearchListInteractor()
+            
+        let presenter = SearchListPresenter(view: searchListVC , interactor: interactor)
+            searchListVC.presenter = presenter
+        searchListVC.presenter?.model = SearchListModel(results: result ?? [] , term: term )
+            presenter.view = searchListVC
+            presenter.interactor = interactor
+            nav!.pushViewController(searchListVC, animated: true)
+
+        
     }
     
     
